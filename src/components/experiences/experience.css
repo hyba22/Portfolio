@@ -1,0 +1,135 @@
+.exp-title {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.exp-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.exp-title h1 span {
+    background: linear-gradient(135deg, #533986, #5a96e4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cards {
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+}
+
+.card {
+    position: relative;
+    background: transparent;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    overflow: visible;
+    margin-bottom: 2rem;
+  
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    justify-content: center;
+    inset: 0;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom right, #533986, #5a96e4);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.6;
+    box-shadow: 
+        0 0 1px rgba(90, 150, 228, 0.3),
+        0 0 1px rgba(83, 57, 134, 0.3),
+        inset 0 0 40px rgba(90, 150, 228, 0.2);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #5a96e4, #533986);
+    z-index: -1;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.card:hover::before {
+    filter: blur(25px);
+    opacity: 0.8;
+    box-shadow: 
+        0 0 60px rgba(90, 150, 228, 0.4),
+        0 0 60px rgba(83, 57, 134, 0.4),
+        inset 0 0 60px rgba(90, 150, 228, 0.3);
+}
+
+.card-content {
+    background: #0f172a;
+    border: 1px solid rgba(83, 57, 134, 0.5);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+    position: relative;
+    color: white;
+    height: 85%;
+}
+
+.card-content img {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.card-text h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(to right, #fff, #b0c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-text .company {
+    font-size: 0.875rem;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+    color: #a3bfff;
+}
+
+.card-text .year {
+    font-size: 0.875rem;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    color: #b399ff;
+    font-weight: 500;
+}
+
+.card-text .description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
