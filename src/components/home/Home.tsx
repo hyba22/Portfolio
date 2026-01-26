@@ -62,7 +62,7 @@ function Home() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => {
-                            const fileId = '1dQ0ukWie-3T_xyKndtQbTrU-zAFQSsJ7';
+                            const fileId = '1-CRPHQF3LJvKqoGRYHs1GfJAUhfe9hP2';
                             const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
                             const link = document.createElement('a');
                             link.href = downloadUrl;
@@ -99,7 +99,7 @@ function Home() {
                     repeatType: "reverse",
                 }}>
                     <div className='absolute inset-0 rounded-full bg-gradient-to-r from-[#533986] to-[#5a7de4] blur-3xl opacity-60 h-full w-full'/>
-                        <img src="src/assets/me.jpeg" alt="self-pic" 
+                        <img src="public/assets/me.jpeg" alt="self-pic" 
                         className='relative z-10 h-[300px] w-[300px] rounded-full shadow-2xl transform transition-transform duration-500 ease-in-out hover:scale-110'/>
                 </motion.div>
             </figure>
