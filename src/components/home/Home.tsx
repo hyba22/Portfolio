@@ -99,7 +99,7 @@ function Home() {
                     repeatType: "reverse",
                 }}>
                     <div className='absolute inset-0 rounded-full bg-gradient-to-r from-[#533986] to-[#5a7de4] blur-3xl opacity-60 h-full w-full'/>
-                        <img src="public/assets/me.jpeg" alt="self-pic" 
+                        <img src="public/me.jpeg" alt="self-pic" 
                         className='relative z-10 h-[300px] w-[300px] rounded-full shadow-2xl transform transition-transform duration-500 ease-in-out hover:scale-110'/>
                 </motion.div>
             </figure>
