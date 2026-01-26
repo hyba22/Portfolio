@@ -28,9 +28,10 @@ function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus, 
-                    vero ullam ut quis ex blanditiis expedita sapiente libero laboriosam 
-                    facilis nam dolorum ipsam reiciendis tempore obcaecati, nemo quos nesciunt.
+                    I am a versatile full-stack developer with hands-on experience in modern web technologies including React, Angular, TypeScript and NestJS. 
+                    I am proficient in both SQL and NoSQL databases, and I have a strong background in DevOps practices using Jenkins. 
+                    Fluent in English, French, and Arabic. I am passionate about building scalable applications and continuously 
+                    improving my skills in software development and automation.
                 </motion.p>
                 
                 {/* buttons */}
