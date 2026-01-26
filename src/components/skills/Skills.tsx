@@ -74,16 +74,14 @@ const SkillCircle = ({ skill, percentage, icon, index }: SkillCircleProps) => {
                                 className="w-5 h-5 md:w-6 md:h-6"  
                                 loading="lazy"
                             />
-                        </div>
-                        
+                        </div> 
                         {/* percentage */}
                         <p className="text-white font-bold text-sm md:text-base mt-0">
                             {percentage}%
                         </p>
                     </div>
                 </div>
-            </div>
-            
+            </div>        
             {/* skill name */}
             <p className="text-white text-xs font-medium mt-2 opacity-90 tracking-wider uppercase text-center">
                 {skill}
