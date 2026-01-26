@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import './Home.css';
+import './home.css';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
