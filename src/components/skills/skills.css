@@ -1,4 +1,4 @@
-/* Title styling */
+
 .skills-title {
     text-align: center;
     margin-bottom: 4rem;
@@ -18,71 +18,82 @@
     color: transparent;
 }
 
-/* Skills section styling */
 .skills-section {
     position: relative;
     overflow: hidden;
 }
 
-/* Grid responsiveness - Adjusted for larger circles */
 .skills-grid {
     display: grid;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    justify-items: center;
 }
 
-/* Mobile: 2 per row with more space */
 @media (max-width: 640px) {
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        padding: 0 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 }
 
-/* Tablet: 3-4 per row */
 @media (min-width: 641px) and (max-width: 768px) {
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
     }
 }
 
-/* Desktop: 5 per row (reduced from 6 to fit larger circles) */
 @media (min-width: 1025px) {
     .skills-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 2.5rem;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
         max-width: 1200px;
     }
 }
 
-/* Small hover effect */
 .skill-circle-container {
     transition: transform 0.3s ease;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-right: 1rem;
 }
 
 .skill-circle-container:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
-/* Progress circle styling */
 .skill-progress-circle {
     filter: none;
 }
 
-/* Scroll margin for navbar */
 #skills {
     scroll-margin-top: 80px;
 }
 
-/* Icon styling */
+.skill-circle-container p {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 .skill-circle-container img {
     opacity: 1;
     display: block;
@@ -91,7 +102,6 @@
     object-fit: contain;
 }
 
-/* Center the content properly */
 .skill-circle-container .absolute.inset-0 {
     display: flex;
     flex-direction: column;
@@ -101,7 +111,6 @@
     height: 100%;
 }
 
-/* Ensure text is visible */
 .skill-circle-container .flex.flex-col.items-center.justify-center p {
     opacity: 1;
     visibility: visible;
@@ -109,8 +118,6 @@
     line-height: 1;
 }
 
-
-/* Icon container styling */
 .skill-circle-container .flex.items-center.justify-center {
     display: flex;
     align-items: center;
@@ -125,12 +132,25 @@
         width: 32px;
         height: 32px;
         margin-bottom: 6px;
+        
     }
 }
 
-/* Make the circles more prominent */
 .skill-circle-container .relative {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
 }

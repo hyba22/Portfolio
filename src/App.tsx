@@ -7,12 +7,12 @@ import Home from "./components/home/Home"
 import Education from "./components/education/Education";
 import Skills from "./components/skills/Skills";
 import Experience from "./components/experiences/Experience";
-import Contact from "./components/contact/Contact";
 import Project from "./components/projects/Project";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
 
 function App() {
-   
-
+  
    useEffect(() => {
       AOS.init({
         duration: 1000,
@@ -35,6 +35,7 @@ function App() {
         <Experience />
         <Project />
         <Contact />
+        <Footer />
       </div>
     </div>
   )

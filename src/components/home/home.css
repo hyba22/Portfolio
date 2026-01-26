@@ -107,7 +107,7 @@
     fill: currentColor;
 }
 
-/* Decorative blobs */
+/* decorative blobs */
 .home-blob-top {
     position: absolute;
     width: 300px;
@@ -132,7 +132,6 @@
     z-index: 1;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .home-title {
         font-size: 3rem;

@@ -21,7 +21,6 @@
     color: transparent;
 }
 
-/* container layout */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -29,7 +28,6 @@
     margin-top: 3rem;
 }
 
-/* info cards*/
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -94,7 +92,6 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* form */
 .contact-form-container {
     width: 100%;
 }

@@ -6,7 +6,7 @@
 
 .education-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 
 .education-title h1 {
@@ -51,7 +51,7 @@
     }
 }
 
-/* Education Card Styles */
+/* card styles */
 .education-card {
     position: relative;
     height: 400px;
@@ -95,7 +95,7 @@
 
 /*    background: linear-gradient(135deg, #533986, #5a96e4);*/
 
-/* Gradient Border Animation */
+/* gradient border animation */
 .gradient-border {
     position: absolute;
     inset: 0;
@@ -113,7 +113,7 @@
     }
 }
 
-/* Decorative blobs */
+/* decorative blobs */
 .education-blob-1 {
     position: absolute;
     width: 400px;

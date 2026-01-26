@@ -10,7 +10,7 @@ interface SkillCircleProps {
 }
 
 const SkillCircle = ({ skill, percentage, icon, index }: SkillCircleProps) => {
-    const radius = 35;  
+    const radius = 30;  
     const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference - (percentage / 100) * circumference;
     
@@ -26,26 +26,26 @@ const SkillCircle = ({ skill, percentage, icon, index }: SkillCircleProps) => {
             }}
             className="skill-circle-container flex flex-col items-center"
         >
-            <div className="relative w-28 h-28 md:w-32 md:h-32"> {/* Increased from w-20/h-20 to w-28/h-28 */}
+            <div className="relative w-16 h-16 md:w-20 md:h-20"> 
                 <svg 
                     className="w-full h-full -rotate-90" 
                     viewBox="0 0 100 100"
                 >
-                    {/* Background circle - increased radius to 35 */}
+                    {/* background circle */}
                     <circle 
                         cx="50" 
                         cy="50" 
-                        r="35" 
+                        r="30" 
                         fill="none"
                         stroke="rgba(255, 255, 255, 0.15)"
                         strokeWidth="8"
                     />
                     
-                    {/* Progress circle - increased radius to 35 */}
+                    {/* progress circle */}
                     <motion.circle 
                         cx="50" 
                         cy="50" 
-                        r="35" 
+                        r="30" 
                         fill="none"
                         stroke="#3B82F6"
                         strokeWidth="8"
@@ -63,20 +63,20 @@ const SkillCircle = ({ skill, percentage, icon, index }: SkillCircleProps) => {
                     />
                 </svg>
                 
-                {/* Center content - Both icon and percentage INSIDE */}
+                {/* center content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <div className="flex flex-col items-center justify-center w-full h-full p-2">
-                        {/* Icon - larger */}
+                        {/* icon */}
                         <div className="flex items-center justify-center mb-1">
                             <img 
                                 src={icon} 
                                 alt={skill} 
-                                className="w-7 h-7 md:w-8 md:h-8"  // Increased from w-5/h-5
+                                className="w-5 h-5 md:w-6 md:h-6"  
                                 loading="lazy"
                             />
                         </div>
                         
-                        {/* Percentage - larger text */}
+                        {/* percentage */}
                         <p className="text-white font-bold text-sm md:text-base mt-0">
                             {percentage}%
                         </p>
@@ -84,7 +84,7 @@ const SkillCircle = ({ skill, percentage, icon, index }: SkillCircleProps) => {
                 </div>
             </div>
             
-            {/* Skill name below circle */}
+            {/* skill name */}
             <p className="text-white text-xs font-medium mt-2 opacity-90 tracking-wider uppercase text-center">
                 {skill}
             </p>
@@ -108,8 +108,8 @@ export default function Skills() {
                 </motion.h1>
             </div>
 
-            {/* Skills Grid - Adjusted columns for larger circles */}
-            <div className='skills-grid max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8 px-4'>
+            {/* Skills Grid */}
+            <div className='skills-grid'>
                 {skills.map((item, index) => (
                     <SkillCircle 
                         key={index}

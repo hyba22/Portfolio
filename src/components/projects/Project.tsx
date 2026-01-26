@@ -14,7 +14,7 @@ interface ProjectType {
 export default function Project() {
   return (
     <article className="container relative font-sans text-white rounded-lg p-8 md:p-16" id="projects">
-      {/* Title Section */}
+      {/* title */}
       <motion.div
         className="projects-title"
         initial={{ opacity: 0, y: 20 }}
@@ -35,16 +35,11 @@ export default function Project() {
             viewport={{ once: true }}
             className="project-card-wrapper"
           >
-            {/* Project Card */}
+            {/* project card */}
             <div className="project-card">
               <div className="project-card-content">
-                {/* Project Title */}
                 <h3 className="project-title">{project.title}</h3>
-
-                {/* Project Description */}
                 <p className="project-description">{project.description}</p>
-
-                {/* Project Tags */}
                 <div className="project-tags">
                   {project.tags.map((tag, tagIndex) => (
                     <span key={tagIndex} className="project-tag">
@@ -52,8 +47,6 @@ export default function Project() {
                     </span>
                   ))}
                 </div>
-
-                {/* Project Links - Only GitHub now */}
                 {project.githubLink && (
                   <div className="project-link-container">
                     <a

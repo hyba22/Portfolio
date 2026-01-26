@@ -10,16 +10,25 @@ const Navbar = () => {
     
     const navItems = [
         {id : 'education', name: 'Education'},
-        {id : 'experience', name: 'Experience'},
         {id : 'skills', name: 'My Skills'},
+        {id : 'experience', name: 'Experiences'},
         {id : 'projects', name: 'Projects'},
-        {id : 'about', name: 'About me'},
         {id : 'contact', name: 'Contact'},
     ]
 
-    const handleNavClick = (itemName : string) => {
-        setActiveSection(itemName.toLowerCase());
+    const handleNavClick = (itemId: string, e: React.MouseEvent) => {
+        e.preventDefault();
+        setActiveSection(itemId);
         setIsMenuOpen(false);
+        
+        // scroll to the section with the matching ID
+        const element = document.getElementById(itemId);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     };
 
     return(
@@ -41,16 +50,15 @@ const Navbar = () => {
                         duration: 0.3
                     }}
                 >
-                    {/* Top row with logo and hamburger button - always visible */}
                     <div className="flex items-center justify-between w-full">
-                        {/* Logo section */}
+                        {/* logo section */}
                         <div className="flex items-center">
                             <Link to='/' className="logo flex no-underline items-center space-x-2">
                                 <span className="font-bold text-white">Portfolio</span>
                             </Link>
                         </div>
                         
-                        {/* Hamburger button visible on small screens - Clean styling */}
+                        {/* hamburger button */}
                         <button
                             className="hamburger-btn text-white lg:hidden p-0 m-0 border-0 bg-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 hover:bg-transparent active:bg-transparent"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -68,22 +76,27 @@ const Navbar = () => {
                             </motion.div>
                         </button>
                         
-                        {/* Desktop menu - hidden on mobile */}
+                        {/* desktop menu  */}
                         <div className="navItems hidden lg:flex items-center space-x-6">
                             {navItems.map((item) => (
-                                <Link key={item.id} to={`#${item.id}`} className="nav-link relative no-underline text-white" onClick={() => handleNavClick(item.name)}>
+                                <a 
+                                    key={item.id} 
+                                    href={`#${item.id}`}
+                                    className="nav-link relative no-underline text-white cursor-pointer" 
+                                    onClick={(e) => handleNavClick(item.id, e)}
+                                >
                                     <motion.span 
                                         className="font-medium duration-300"
                                         whileHover={{scale:1.05}}
                                         whileTap={{scale:0.95}}>
                                         {item.name}
                                     </motion.span>
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     </div>
                     
-                    {/* Mobile dropdown menu - appears below when open */}
+                    {/* Mobile dropdown menu */}
                     {isMenuOpen && (
                         <motion.div 
                             initial={{ opacity: 0, y: -10 }}
@@ -92,16 +105,16 @@ const Navbar = () => {
                             className="mobile-menu flex flex-col items-start w-full mt-4 lg:hidden"
                         >
                             {navItems.map((item) => (
-                                <Link
+                                <a
                                     key={item.id}
-                                 to={`#${item.id}`}
-                                    className="nav-link no-underline w-full p-2 rounded-md text-white duration-200 "
-                                    onClick={() => handleNavClick(item.name)}
+                                    href={`#${item.id}`}
+                                    className="nav-link no-underline w-full p-2 rounded-md text-white duration-200 block"
+                                    onClick={(e) => handleNavClick(item.id, e)}
                                 >
-                                    <span className="">
+                                    <span>
                                         {item.name}
                                     </span>
-                                </Link>
+                                </a>
                             ))}
                         </motion.div>
                     )}

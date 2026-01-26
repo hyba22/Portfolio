@@ -7,17 +7,16 @@
 .navcontainer{
   /*  background: linear-gradient(to bottom right, #533986, #6c2370, #111827);*/
     background: linear-gradient(to bottom right, #533986, #5a7de4);
-    height: 50px; /* Fixed height when closed  #533986, #5a7de4*/
+    height: 50px; 
     width: 100%;
     max-width: 48rem;
     padding: 0.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
     min-width: 16rem;
-    overflow: hidden; /* Hide overflow during animation */
+    overflow: hidden; 
 }
 
-/* When menu is open, expand height */
 .navcontainer.flex-col {
     height: fit-content; 
     transition: height 0.3s ease-in-out;
@@ -26,10 +25,9 @@
 @media (min-width: 1024px) {
     .navcontainer {
         width: 48rem;
-        height: 50px !important; /* Fixed height on desktop */
+        height: 50px !important; 
     }
     
-    /* Reset height on desktop even when menu was open on mobile */
     .navcontainer.flex-col {
         height: 50px !important;
     }
@@ -80,13 +78,10 @@
     width: 100%;
 }
 
-/* Responsive Navbar - Mobile */
 @media (max-width: 1023px) {
     .navItems {
         display: none !important;
     }
-    
-    /* Hamburger button styling - remove square background */
     .hamburger-btn {
         display: flex !important;
         align-items: center;
@@ -101,7 +96,7 @@
         min-height: auto !important;
     }
     
-    /* Remove any default button styling */
+
     .hamburger-btn:hover,
     .hamburger-btn:focus,
     .hamburger-btn:active {
@@ -110,8 +105,7 @@
         box-shadow: none !important;
         outline: none !important;
     }
-    
-    /* Mobile menu container */
+
     .mobile-menu {
         width: 100%;
         justify-content: space-evenly;
@@ -123,7 +117,6 @@
         animation: slideDown 0.3s ease-out forwards;
     }
 
-    /* Smooth animation for mobile menu */
     @keyframes slideDown {
         from {
             opacity: 0;
@@ -148,7 +141,6 @@
     }
 }
 
-/* Desktop styles */
 @media (min-width: 1024px) {
     .hamburger-btn {
         display: none !important;
@@ -158,7 +150,6 @@
         display: none !important;
     }
     
-    /* Reset any mobile modifications on desktop */
     .navcontainer {
         flex-direction: row !important;
         height: 50px !important;

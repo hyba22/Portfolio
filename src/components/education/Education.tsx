@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 export default function Education() {
     return (
         <div className='education-container relative mt-20' id='education'>
-            {/* Decorative blobs */}
+            {/* decorative blobs */}
             <div className="education-blob-1 hidden md:block" />
             <div className="education-blob-2 hidden md:block" />
             
-            {/* Title Section */}
+            {/* title */}
             <motion.div 
                 className='education-title'
                 initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function Education() {
                 <h1>About my <span>studies</span></h1>
             </motion.div>
 
-            {/* Education Cards Grid */}
+            {/* cards */}
             <div className='education-grid'>
                 {education.map((item, index) => (
                     <motion.div
@@ -35,10 +35,8 @@ export default function Education() {
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                     >
-                        {/* Animated gradient border */}
+                        {/* animated gradient border */}
                         <div className='gradient-border' />
-                        
-                        {/* Card content */}
                         <div className='education-card-inner'>
                             <h2 className='education-card-title'>
                                 {item.title}

@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+    const navigate = useNavigate();
     return (
-        <div className="home-container">
-            {/* Decorative blobs */}
+        <div className="home-container" id='home'>
+            {/* decorative blobs */}
             <div className="home-blob-top hidden md:block"></div>
             <div className="home-blob-bottom hidden md:block"></div>
             
             <div className="home-content">
-                {/* Main heading */}
+                {/* main heading */}
                 <motion.h1 
                     className="home-title"
                     initial={{ opacity: 0, y: 20 }}
@@ -19,7 +21,7 @@ function Home() {
                     Hi, I'm <span className="gradient-text">Hiba Bouslahi</span>
                 </motion.h1>
                 
-                {/* Description */}
+                {/* description */}
                 <motion.p 
                     className="home-description"
                     initial={{ opacity: 0, y: 20 }}
@@ -31,29 +33,46 @@ function Home() {
                     facilis nam dolorum ipsam reiciendis tempore obcaecati, nemo quos nesciunt.
                 </motion.p>
                 
-                {/* Buttons */}
-                <motion.div 
+                {/* buttons */}
+                <motion.div
                     className="buttons-container"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    {/* Hire Me Button */}
-                    <motion.button 
+                    <motion.button
                         className="hire-me-btn"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => {
+                            navigate('#contact', { replace: true });
+                            // force a scroll to the contact section
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+
                     >
                         Hire me
                     </motion.button>
-                    
-                    {/* Download Resume Button */}
-                    <motion.button 
+                    <motion.button
                         className="download-btn"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => {
+                            const fileId = '1dQ0ukWie-3T_xyKndtQbTrU-zAFQSsJ7';
+                            const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+                            const link = document.createElement('a');
+                            link.href = downloadUrl;
+                            link.target = '_blank';
+                            link.download = 'Bouslahi-Hiba-Resume.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }}
                     >
-                        <svg 
+                        <svg
                             className="download-icon"
                             viewBox="0 0 24 24"
                             fill="currentColor"
@@ -64,7 +83,7 @@ function Home() {
                     </motion.button>
                 </motion.div>
             </div>
-            {/* self picture on the right side */}
+            {/* self picture */}
             <figure className='lg:h-full md:flex md:justify-end mt-20 md:mt-0'>
                 <motion.div className='w-[350px] h-[350px] md:w-[400px] flex justify-center items-center p-3 rounded-full overflow-hidden relative'
                 animate={{

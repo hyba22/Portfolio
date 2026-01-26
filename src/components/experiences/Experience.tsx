@@ -34,8 +34,8 @@ const ExperienceSection = ({ title, company, icon, year, description }: Experien
 
 export default function Experience() {
     return (
-        <div className="relative container mx-auto px-4 py-12 lg:p-16" id="experience">
-            {/* Title*/}
+        <section id="experience" className="experience-section relative py-20 px-4 md:px-8 lg:px-16 xl:px-24">
+            {/* title*/}
             <div className="exp-title text-center mb-12 lg:mb-16">
                 <motion.h1
                     className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
@@ -48,7 +48,7 @@ export default function Experience() {
                 </motion.h1>
             </div>
             
-            {/* Cards Section */}
+            {/* cards */}
             <div className="cards">
                 {experiences.map((exp) => (
                     <ExperienceSection  
@@ -61,6 +61,6 @@ export default function Experience() {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
