@@ -82,7 +82,7 @@ const Navbar = () => {
                                 <a 
                                     key={item.id} 
                                     href={`#${item.id}`}
-                                    className="nav-link relative no-underline text-white cursor-pointer" 
+                                    className={`nav-link relative no-underline cursor-pointer ${activeSection === item.id ? 'text-blue-400' : 'text-white hover:text-blue-300'}`} 
                                     onClick={(e) => handleNavClick(item.id, e)}
                                 >
                                     <motion.span 
@@ -91,6 +91,13 @@ const Navbar = () => {
                                         whileTap={{scale:0.95}}>
                                         {item.name}
                                     </motion.span>
+                                    {activeSection === item.id && (
+                                        <motion.span 
+                                            className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"
+                                            layoutId="activeNav"
+                                            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                                        />
+                                    )}
                                 </a>
                             ))}
                         </div>
@@ -108,7 +115,7 @@ const Navbar = () => {
                                 <a
                                     key={item.id}
                                     href={`#${item.id}`}
-                                    className="nav-link no-underline w-full p-2 rounded-md text-white duration-200 block"
+                                    className={`nav-link no-underline w-full p-2 rounded-md duration-200 block ${activeSection === item.id ? 'text-blue-400 bg-blue-900/20' : 'text-white hover:bg-blue-900/10'}`}
                                     onClick={(e) => handleNavClick(item.id, e)}
                                 >
                                     <span>
