@@ -37,7 +37,7 @@ const Contact = () => {
         },
         (error) => {
           console.error('Failed to send message:', error);
-          toast.error('Failed to send message. Please try again.');
+          toast.error(error.text || 'Failed to send message. Please try again.');
         }
       )
       .finally(() => {

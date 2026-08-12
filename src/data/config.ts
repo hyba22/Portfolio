@@ -134,12 +134,28 @@ export const experiences =[
         icon:'https://img.icons8.com/ios-filled/64/ffffff/briefcase-settings.png'
     },
     {
-        id:2,
+        id:3,
         title:'Customer adviser',
         company:'Teleperformance',
-        year:'2022 - present',
+        year:'2022 - 2026',
         description:'Served as a Customer Advisor for Bouygues Telecom, specializing in internet box products and services. Responsibilities include resolving technical issues, optimizing customer connectivity, providing personalized support, and maintaining high client satisfaction through effective communication and problem-solving',
         icon:'https://img.icons8.com/ios-filled/64/ffffff/customer-support.png'
+    },
+    {
+        id:4,
+        title:'LLS interpreter',
+        company:'Teleperformance',
+        year:'2026 - present',
+        description:'Serve as a dedicated French-English interpreter for LanguageLine Solutions, supporting vital interactions between service providers and their clients. Specialize in high-stakes domains such as medical diagnosis, insurance claims, financial consultations, and social services, ensuring accurate, neutral, and empathetic communication for every call.',
+        icon:'https://img.icons8.com/ios-filled/64/ffffff/translation.png'
+    },
+    {
+        id:5,
+        title:'Software engineer intern',
+        company:'Arabsoft',
+        year:'2026 - 4 months',
+        description:'Developed a real-time chat module for product complaint management. Set up secure WebSocket communication with JWT authentication, built an automated priority scoring system (Level 1-3) using keyword analysis, and enabled administrators to collaborate on resolving complaints. Contributed across the full stack using Spring Boot, React with TypeScript, and MySQL, with Docker for containerization and Jenkins for DevOps.',
+        icon:'https://img.icons8.com/ios-filled/64/ffffff/server.png'
     }
     
 ]
@@ -227,10 +243,17 @@ export const projects = [
   {
   id: 8,
   title: 'Old Portfolio Version',
-  description: 'A responsive personal portfolio website built with React,',
+  description: 'A responsive personal portfolio website built as a single-page crafted with React and enriched with dynamic particle animations.',
   category: 'Personal Portfolio',
   tags: ['React', 'CSS', 'JavaScript', 'Particles', 'Frontend'],
   githubLink: 'https://github.com/hyba22/NewPortfolio',
+  },
+  {
+  id: 9,
+  title: 'Smart Complaint',
+  description: 'Real-time complaint management system with intelligent priority scoring, multi-admin collaboration, and secure WebSocket communication for enterprise SaaS platforms.',
+  category: 'PFE / Real-Time Systems',
+  tags: ['Spring Boot', 'WebSocket', 'React','TypeScript', 'JWT', 'Jenkins', 'Docker', 'AI', 'Cloudflare', 'MySQL'],
+  githubLink: 'https://github.com/hyba22/smartComplaint',
   }
 ];
-

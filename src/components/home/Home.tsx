@@ -58,21 +58,12 @@ function Home() {
                     >
                         Hire me
                     </motion.button>
-                    <motion.button
+                    <motion.a
                         className="download-btn"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => {
-                            const fileId = '1-CRPHQF3LJvKqoGRYHs1GfJAUhfe9hP2';
-                            const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-                            const link = document.createElement('a');
-                            link.href = downloadUrl;
-                            link.target = '_blank';
-                            link.download = 'Bouslahi-Hiba-Resume.pdf';
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                        }}
+                        href="/Bouslahi_Hiba_Resume.pdf"
+                        download="Bouslahi_Hiba_Resume.pdf"
                     >
                         <svg
                             className="download-icon"
@@ -82,7 +73,7 @@ function Home() {
                             <path d="M12 16L16 11H13V4H11V11H8L12 16ZM19 18H5V20H19V18Z" />
                         </svg>
                         <span>Download Resume</span>
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </div>
             {/* self picture */}
