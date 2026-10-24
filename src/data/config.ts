@@ -255,5 +255,13 @@ export const projects = [
   category: 'PFE / Real-Time Systems',
   tags: ['Spring Boot', 'WebSocket', 'React','TypeScript', 'JWT', 'Jenkins', 'Docker', 'AI', 'Cloudflare', 'MySQL'],
   githubLink: 'https://github.com/hyba22/smartComplaint',
+  },
+  {
+  id: 10,
+  title: 'Interpreters Help',
+  description: 'A Windows desktop app for interpreters that transcribes whatever the computer is playing (video calls, videos, podcasts) and translates it live, side by side. Runs 100% offline with local AI models (Whisper and NLLB-200).',
+  category: 'Desktop App - AI Live Transcription & Translation',
+  tags: ['Tauri', 'Rust', 'React', 'TypeScript', 'AI', 'Whisper', 'NLLB-200', 'Offline'],
+  githubLink: 'https://github.com/hyba22/interpretersHelp/releases/latest',
   }
 ];

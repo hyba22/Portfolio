@@ -1,0 +1,13 @@
+name = "hiba-chat-portfolio"
+main = "index.ts"
+compatibility_date = "2025-09-01"
+workers_dev = true
+preview_urls = false
+
+[ai]
+binding = "AI"
+
+[vars]
+# sites allowed to call this worker (the live portfolio and the local dev server)
+ALLOWED_ORIGINS = "https://portfolio-ly72.onrender.com,http://localhost:5173"
+MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"

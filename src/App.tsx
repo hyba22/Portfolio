@@ -10,6 +10,7 @@ import Experience from "./components/experiences/Experience";
 import Project from "./components/projects/Project";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import ChatBot from "./components/chatbot/ChatBot";
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
+      <ChatBot />
     </div>
   )
 }
