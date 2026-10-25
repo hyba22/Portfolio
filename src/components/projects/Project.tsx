@@ -9,6 +9,7 @@ interface ProjectType {
   category: string;
   tags: string[];
   githubLink?: string;
+  liveLink?: string;
 }
 
 export default function Project() {
@@ -47,6 +48,17 @@ export default function Project() {
                     </span>
                   ))}
                 </div>
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-live-link"
+                  >
+                    Try the live website
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
                 {project.githubLink && (
                   <div className="project-link-container">
                     <a

@@ -197,7 +197,10 @@ const answers = {
     }),
     project: (p: (typeof projects)[number]): Reply => ({
         text: `${pick(`Ah, ${shortTitle(p)}! Good choice.`, `Sure, let me tell you about ${shortTitle(p)}.`, `${shortTitle(p)}, one of my favorites!`)}\n\n${p.description}\n\nTech used: ${p.tags.join(', ')}.`,
-        links: [{ label: p.githubLink.includes('/releases') ? 'Download the app' : 'See the code on GitHub', href: p.githubLink }],
+        links: [
+            ...('liveLink' in p && p.liveLink ? [{ label: 'Open the website', href: p.liveLink }] : []),
+            { label: p.githubLink.includes('/releases') ? 'Download the app' : 'See the code on GitHub', href: p.githubLink },
+        ],
     }),
     job: (list: typeof experiences): Reply => ({
         text: list

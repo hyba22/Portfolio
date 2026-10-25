@@ -121,6 +121,25 @@
   transform: translateY(-1px);
 }
 
+/* Text link to a project's live website, shown under the tags */
+.project-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: -0.5rem 0 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a68ce6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-live-link:hover {
+  color: #7fb0f0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .project-link-container {
   margin-top: auto;
   display: flex;

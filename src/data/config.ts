@@ -263,5 +263,14 @@ export const projects = [
   category: 'Desktop App - AI Live Transcription & Translation',
   tags: ['Tauri', 'Rust', 'React', 'TypeScript', 'AI', 'Whisper', 'NLLB-200', 'Offline'],
   githubLink: 'https://github.com/hyba22/interpretersHelp/releases/latest',
+  },
+  {
+  id: 11,
+  title: 'SplitRight',
+  description: 'A website that helps roommates split rent and bills fairly. Split by room size, percentage or fixed amounts, and every share adds up to the exact cent. Bilingual (English and French), works offline and installs on your phone like an app.',
+  category: 'Web App (PWA), Rent and Bill Splitter',
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'PWA', 'Vitest', 'Cloudflare Pages', 'Offline'],
+  githubLink: 'https://github.com/hyba22/splitright',
+  liveLink: 'https://splitright-app.pages.dev',
   }
 ];

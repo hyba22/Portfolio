@@ -21,6 +21,6 @@ export function buildPortfolioContext() {
         `# Education\n${education.map((e) => `- ${e.title}: ${e.description}`).join('\n')}`,
         `# Skills\n${skills.map((s) => s.skill).join(', ')}. Also used in projects: Angular, Spring Boot, Flutter, MySQL, WebSocket.`,
         `# Experience\n${experiences.map((e) => `- ${e.title} at ${e.company} (${e.year}): ${e.description}`).join('\n')}`,
-        `# Projects\n${projects.map((p) => `- ${p.title} (${p.category}): ${p.description} Built with: ${p.tags.join(', ')}. Link: ${p.githubLink}`).join('\n')}`,
+        `# Projects\n${projects.map((p) => `- ${p.title} (${p.category}): ${p.description} Built with: ${p.tags.join(', ')}. Link: ${p.githubLink}${'liveLink' in p && p.liveLink ? ` Live website: ${p.liveLink}` : ''}`).join('\n')}`,
     ].join('\n\n');
 }
