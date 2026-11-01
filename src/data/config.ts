@@ -272,5 +272,14 @@ export const projects = [
   tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'PWA', 'Vitest', 'Cloudflare Pages', 'Offline'],
   githubLink: 'https://github.com/hyba22/splitright',
   liveLink: 'https://splitright-app.pages.dev',
+  },
+  {
+  id: 12,
+  title: 'ExpenseControl',
+  description: 'A personal finance web app to track spending, set monthly budgets and see where the money goes with charts. Import bank statements and payslips (CSV or PDF) and ask the built-in AI assistant for budgeting advice. English and French.',
+  category: 'Full-Stack Web App, Personal Finance',
+  tags: ['NestJS', 'React', 'TypeScript', 'PostgreSQL', 'Prisma', 'JWT', 'Tailwind CSS', 'AI', 'Cloudflare'],
+  githubLink: 'https://github.com/hyba22/expensesControl',
+  liveLink: 'https://expensescontrol.pages.dev/app',
   }
 ];
