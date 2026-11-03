@@ -27,6 +27,20 @@
     box-shadow: 0 10px 25px -5px rgba(90, 125, 228, 0.5);
 }
 
+/* the gradient shows as a thin ring around the chibi */
+.chatbot-toggle:not(.open) {
+    padding: 3px;
+}
+
+.chatbot-toggle-avatar {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    object-fit: cover;
+    background: white;
+}
+
 .chatbot-toggle:not(.open)::before {
     content: '';
     position: absolute;
@@ -67,14 +81,12 @@
 }
 
 .chatbot-avatar {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
+    background: white;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    object-fit: cover;
     flex-shrink: 0;
 }
 
@@ -152,6 +164,39 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom-left-radius: 4px;
     color: rgba(255, 255, 255, 0.9);
+}
+
+/* a message with the assistant's avatar beside it */
+.chatbot-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    max-width: 92%;
+}
+
+.chatbot-row.bot {
+    align-self: flex-start;
+}
+
+.chatbot-row.user {
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.chatbot-row .chatbot-message {
+    max-width: none;
+    min-width: 0;
+}
+
+.chatbot-message-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 9999px;
+    background: white;
+    border: 1.5px solid #5a7de4;
+    object-fit: cover;
+    flex-shrink: 0;
+    animation: chatbot-in 0.25s ease-out;
 }
 
 .chatbot-message.user {

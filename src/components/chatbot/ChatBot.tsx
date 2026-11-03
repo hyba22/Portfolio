@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { FaPaperPlane, FaRobot, FaTimes } from 'react-icons/fa';
+import { FaPaperPlane, FaTimes } from 'react-icons/fa';
 import { askAI, type ChatTurn } from './ai';
 import { answerQuestion, suggestions, type Reply } from './knowledge';
 import './chatbot.css';
@@ -43,6 +43,11 @@ const welcome: Message = {
     from: 'bot',
     reply: { text: "Hi there! 👋 I'm Hiba's assistant. Ask me anything about her: her skills, her projects, her experience, or how to get in touch." },
 };
+
+const avatarSrc = '/chibi-icon.gif';
+
+// the chibi shown next to everything the assistant says
+const BotAvatar = () => <img className="chatbot-message-avatar" src={avatarSrc} alt="" />;
 
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -109,9 +114,7 @@ const ChatBot = () => {
                     >
                         {/* header */}
                         <header className="chatbot-header">
-                            <div className="chatbot-avatar">
-                                <FaRobot />
-                            </div>
+                            <img className="chatbot-avatar" src={avatarSrc} alt="" />
                             <div className="chatbot-header-text">
                                 <h2>Hiba's Assistant</h2>
                                 <span>
@@ -126,28 +129,34 @@ const ChatBot = () => {
                         {/* messages */}
                         <div className="chatbot-messages" ref={listRef} aria-live="polite">
                             {messages.map((m) => (
-                                <div key={m.id} className={`chatbot-message ${m.from}`}>
-                                    <p><MessageText text={m.reply.text} /></p>
-                                    {m.reply.links && (
-                                        <div className="chatbot-links">
-                                            {m.reply.links.map((l) => (
-                                                <a
-                                                    key={l.href}
-                                                    href={l.href}
-                                                    target={l.href.startsWith('http') ? '_blank' : undefined}
-                                                    rel="noopener noreferrer"
-                                                    download={l.href.endsWith('.pdf') ? true : undefined}
-                                                >
-                                                    {l.label}
-                                                </a>
-                                            ))}
-                                        </div>
-                                    )}
+                                <div key={m.id} className={`chatbot-row ${m.from}`}>
+                                    {m.from === 'bot' && <BotAvatar />}
+                                    <div className={`chatbot-message ${m.from}`}>
+                                        <p><MessageText text={m.reply.text} /></p>
+                                        {m.reply.links && (
+                                            <div className="chatbot-links">
+                                                {m.reply.links.map((l) => (
+                                                    <a
+                                                        key={l.href}
+                                                        href={l.href}
+                                                        target={l.href.startsWith('http') ? '_blank' : undefined}
+                                                        rel="noopener noreferrer"
+                                                        download={l.href.endsWith('.pdf') ? true : undefined}
+                                                    >
+                                                        {l.label}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             ))}
                             {isTyping && (
-                                <div className="chatbot-message bot chatbot-typing" aria-label="Assistant is typing">
-                                    <span /><span /><span />
+                                <div className="chatbot-row bot">
+                                    <BotAvatar />
+                                    <div className="chatbot-message bot chatbot-typing" aria-label="Assistant is typing">
+                                        <span /><span /><span />
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -185,7 +194,7 @@ const ChatBot = () => {
                 )}
             </AnimatePresence>
 
-            {/* floating robot button */}
+            {/* floating chibi button */}
             <motion.button
                 className={`chatbot-toggle ${isOpen ? 'open' : ''}`}
                 onClick={() => setIsOpen((o) => !o)}
@@ -193,7 +202,7 @@ const ChatBot = () => {
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.92 }}
             >
-                {isOpen ? <FaTimes /> : <FaRobot />}
+                {isOpen ? <FaTimes /> : <img className="chatbot-toggle-avatar" src={avatarSrc} alt="" />}
             </motion.button>
         </div>
     );
